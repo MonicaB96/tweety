@@ -1,0 +1,32 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "migrate-init": "cross-env NODE_ENV=development npx knex migrate:make init --migrations-directory database/migrations",
+    "migrate": "cross-env NODE_ENV=development npx knex migrate:latest --knexfile database/knexfile.js",
+    "migrate-test": "cross-env NODE_ENV=test npx knex migrate:latest --knexfile database/knexfile.js",
+    "seed": "cross-env NODE_ENV=test npx knex seed:make --knexfile database/seed",
+    "run-seed": "cross-env NODE_ENV=test npx knex seed:run --knexfile database/knexfile.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "test": "cross-env NODE_ENV=test npm run run-seed && jest --forceExit"
+  },
+  "author": "MonicaB96",
+  "license": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "knex": "^2.0.0",
+    "pg": "^8.7.3"
+  },
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3",
+    "yup": "^0.32.11"
+  }
+}
