@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="./scripts/createUser.js"></script>
+    </head>
+
+    <body>
+        <h1>Tweety project</h1>
+        <a href="#signup">Signup</a>
+
+        <h2 id="signup">Signup to Tweety</h2>
+        <form action="javascript:createUser()">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email"><br>
+            <label for="firstName">First name:</label><br>
+            <input type="text" id="firstName"><br>
+            <label for="lastName">Last name:</label><br>
+            <input type="text" id="lastName"><br><br>
+            <label for="birthday">Birthday:</label><br>
+            <input type="date" id="birthday"><br><br>
+            <p id="message"></p>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
