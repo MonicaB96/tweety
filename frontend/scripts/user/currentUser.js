@@ -1,5 +1,5 @@
 import { getCurrentUserSession } from '../utils/session.js';
-import { accountUrl } from '../utils/url.js';
+import { profileUrl } from '../utils/url.js';
 
 function getCurrentUser() {
   var user = getCurrentUserSession();
@@ -8,8 +8,8 @@ function getCurrentUser() {
       '<p><b>You are currently logged in with: </b>' +
       user.email +
       '. <a href="' +
-      accountUrl +
-      '">Go to your account page</a></p>';
+      profileUrl +
+      '">Go to your profile</a></p>';
   }
 }
 

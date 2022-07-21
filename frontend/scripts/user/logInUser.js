@@ -1,6 +1,6 @@
 import { getApi } from '../utils/api.js';
 import { writeMessage } from '../utils/writeMessage.js';
-import { navigateToAccount } from '../utils/url.js';
+import { navigateToProfile } from '../utils/url.js';
 import {
   getMessageSession,
   removeMessageSession,
@@ -16,7 +16,7 @@ async function logInUser() {
       switch (data.status) {
         case 200:
           data.json().then((user) => setCurrentUserSession(user));
-          navigateToAccount();
+          navigateToProfile();
           break;
         case 404:
           writeMessage('Error: This email does not exist', 'red');
