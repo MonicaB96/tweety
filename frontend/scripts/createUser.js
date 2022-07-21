@@ -1,19 +1,5 @@
-function writeMessage(message, color) {
-  const msg = document.getElementById('message');
-  msg.innerHTML = message;
-  msg.style.color = color;
-}
-
-async function postApi(path, data) {
-  var apiUrl = 'http://localhost:8080/' + path;
-  return await fetch(apiUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-}
+import { postApi } from './utils/api.js';
+import { writeMessage } from './utils/writeMessage.js';
 
 async function createUser() {
   var data = {
@@ -41,3 +27,11 @@ async function createUser() {
     })
     .catch(() => writeMessage('Error: Please try again', 'red'));
 }
+
+document.getElementById('submit').addEventListener(
+  'click',
+  function () {
+    createUser();
+  },
+  false,
+);
