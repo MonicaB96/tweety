@@ -1,7 +1,9 @@
-import { postApi } from './utils/api.js';
-import { writeMessage } from './utils/writeMessage.js';
+import { postApi } from '../utils/api.js';
+import { writeMessage } from '../utils/writeMessage.js';
+import { navigateToLogin } from '../utils/url.js';
+import { clearSession, setMessageSession } from '../utils/session.js';
 
-async function createUser() {
+async function signUpUser() {
   var data = {
     email: document.getElementById('email').value,
     firstName: document.getElementById('firstName').value,
@@ -12,7 +14,9 @@ async function createUser() {
     .then((data) => {
       switch (data.status) {
         case 201:
-          writeMessage('Success: Your account has been created!', 'green');
+          clearSession();
+          setMessageSession('Success: Your account has been created!');
+          navigateToLogin();
           break;
         case 400:
           writeMessage('Error: Please make sure all fields are filled', 'red');
@@ -28,10 +32,10 @@ async function createUser() {
     .catch(() => writeMessage('Error: Please try again', 'red'));
 }
 
-document.getElementById('submit').addEventListener(
+document.getElementById('submitSignup').addEventListener(
   'click',
   function () {
-    createUser();
+    signUpUser();
   },
   false,
 );
