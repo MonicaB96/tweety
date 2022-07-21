@@ -1,6 +1,9 @@
-export const loginUrl = '../../index.html';
-export const signupUrl = '../../signup.html';
-export const profileUrl = '../../profile.html';
+const href = window.location.href;
+const dir = href.substring(0, href.lastIndexOf('/')) + '/';
+
+export const loginUrl = dir + 'index.html';
+export const signupUrl = dir + 'signup.html';
+export const profileUrl = dir + 'profile.html';
 
 export function navigateToLogin() {
   window.location.href = loginUrl;
