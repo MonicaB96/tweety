@@ -2,16 +2,31 @@
     <head>
         <script type="module" src="./scripts/user/accountDetails.js"></script>
         <script type="module" src="./scripts/user/logOutUser.js"></script>
+        <script type="module" src="./scripts/post/createPost.js"></script>
+        <script type="module" src="./scripts/post/showMyPosts.js"></script>
+        <script type="module" src="./scripts/onLoad/profile.js"></script>
     </head>
 
     <body>
         <h1>Tweety project</h1>
 
         <h2>Tweety profile</h2>
+        <div style="float:right">
+            <button id="logout">Log out</button>
+        </div>
         <p id="email"><b>Email: </b></p>
         <p id="name"><b>Name: </b></p>
         <p id="birthday"><b>Birthday: </b></p>
 
-        <button id="logout">Log out</button>
+        <div style="padding-top: 10px">
+            <p style="font-size:large"><b>My posts</b></p>
+            <div style="display: inline-flex">
+                <textarea id="newPost" placeholder="new post"></textarea>
+                <button id="createPost">Create post</button>
+            </div>
+            <p id="message"></p>
+        </div>
+        <div id="newAddedPost"></div>
+        <div id="posts"></div>
     </body>
 </html>

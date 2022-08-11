@@ -1,7 +1,7 @@
 import { getCurrentUserSession } from '../utils/session.js';
 import { navigateToLogin } from '../utils/url.js';
 
-function getAccountDetails() {
+export function getAccountDetails() {
   var user = getCurrentUserSession();
   if (!user) {
     navigateToLogin();
@@ -14,7 +14,3 @@ function getAccountDetails() {
     ).toLocaleDateString('en-GB');
   }
 }
-
-window.onload = function () {
-  getAccountDetails();
-};

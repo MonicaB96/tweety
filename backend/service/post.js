@@ -11,6 +11,15 @@ class PostService {
     }
     return await postRepo.createPost(authorId, text);
   }
+
+  async getPostsByAuthorId(authorId) {
+    const checkUser = await userRepo.exists(authorId);
+    if (!checkUser) {
+      throw new UserNotFoundException();
+    }
+    const res = await postRepo.getPostsByAuthorId(authorId);
+    return res;
+  }
 }
 
 module.exports = new PostService();

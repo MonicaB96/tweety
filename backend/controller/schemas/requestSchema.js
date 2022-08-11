@@ -20,8 +20,11 @@ let createPostReqSchema = yup.object().shape({
     ),
 });
 
+let getPostsByAuthorIdReqSchema = yup.string().required();
+
 module.exports = {
   createUserReqSchema,
   getUserByEmailReqSchema,
   createPostReqSchema,
+  getPostsByAuthorIdReqSchema,
 };
